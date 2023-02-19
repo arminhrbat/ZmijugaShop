@@ -1,0 +1,15 @@
+{
+    "name": "arminhrbat/zmijuga-shop",
+    "autoload": {
+        "psr-4": {
+            "Arminhrbat\\ZmijugaShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Armin Hrbat",
+            "email": "92021852+arminhrbat@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
