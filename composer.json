@@ -11,5 +11,7 @@
             "email": "92021852+arminhrbat@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "mikecao/flight": "^2.0"
+    }
 }
