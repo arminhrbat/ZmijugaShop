@@ -7,11 +7,7 @@ require 'vendor/autoload.php';
 
 Flight::route('/', function(){
     // Set database connection parameters
-    $host = 'sql.freedb.tech';
-    $port = '3306';
-    $dbname = 'freedb_zmijugashop';
-    $username = 'freedb_arminhrbat';
-    $password = '*czPUfE%cND#y98';
+    
 
     // Connect to the database using PDO
     $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
