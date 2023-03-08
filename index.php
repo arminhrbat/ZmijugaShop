@@ -5,27 +5,19 @@ ini_set('display_errors', 1);
 
 require 'vendor/autoload.php';
 
-Flight::route('/', function(){
-    // Set database connection parameters
-    
+$servername = "localhost:8889";
+$username = "root";
+$password = "root";
+$schema = "zmijugalokal";
 
-    // Connect to the database using PDO
-    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-    $pdo = new PDO($dsn, $username, $password);
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully"; 
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
 
-    // Prepare and execute a query to retrieve users' name and lastname
-    $stmt = $pdo->prepare('SELECT name, lastname FROM korisnici');
-    $stmt->execute();
-
-    // Fetch the results and store them in a variable
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Display the results
-    foreach ($results as $row) {
-        echo $row['name'] . ' ' . $row['lastname'] . '<br>';
-    }
-});
-
-Flight::start();
 
 ?>
